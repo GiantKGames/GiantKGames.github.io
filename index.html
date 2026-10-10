@@ -516,6 +516,59 @@
         gap: 5px;
       }
     }
+	
+	.gallery-item img {
+	  cursor: zoom-in;
+	}
+
+	.lightbox {
+	  position: fixed;
+	  inset: 0;
+
+	  display: none;
+	  align-items: center;
+	  justify-content: center;
+
+	  padding: 40px;
+
+	  background: rgba(0, 0, 0, 0.9);
+
+	  z-index: 5000;
+	}
+
+	.lightbox.active {
+	  display: flex;
+	}
+
+	.lightbox img {
+	  max-width: 95vw;
+	  max-height: 90vh;
+
+	  width: auto;
+	  height: auto;
+
+	  object-fit: contain;
+
+	  border-radius: 6px;
+
+	  box-shadow:
+		0 20px 60px rgba(0, 0, 0, 0.6);
+	}
+
+	.lightbox-close {
+	  position: absolute;
+
+	  top: 20px;
+	  right: 28px;
+
+	  color: #ffffff;
+
+	  font-size: 42px;
+
+	  line-height: 1;
+
+	  cursor: pointer;
+	}
   </style>
 </head>
 
@@ -658,27 +711,43 @@
 
       <div class="gallery-item">
         <img src="images/nowhere-dawn/screenshot-01.png"
-             alt="Nowhere Dawn gameplay screenshot">
+             alt="Nowhere Dawn gameplay screenshot"
+			 onclick="openLightbox(this.src)">
       </div>
 
       <div class="gallery-item">
         <img src="images/nowhere-dawn/screenshot-02.png"
-             alt="Nowhere Dawn gameplay screenshot">
+             alt="Nowhere Dawn gameplay screenshot"
+			 onclick="openLightbox(this.src)">
       </div>
 
       <div class="gallery-item">
         <img src="images/nowhere-dawn/screenshot-03.png"
-             alt="Nowhere Dawn gameplay screenshot">
+             alt="Nowhere Dawn gameplay screenshot"
+			 onclick="openLightbox(this.src)">
       </div>
 
       <div class="gallery-item">
         <img src="images/nowhere-dawn/screenshot-04.png"
-             alt="Nowhere Dawn gameplay screenshot">
+             alt="Nowhere Dawn gameplay screenshot"
+			 onclick="openLightbox(this.src)">
       </div>
 
     </div>
 
   </section>
+  
+  <div id="lightbox"
+     class="lightbox"
+     onclick="closeLightbox()">
+
+  <span class="lightbox-close">&times;</span>
+
+  <img id="lightbox-image"
+       src=""
+       alt="Large screenshot">
+
+  </div>
 
   <section>
 
@@ -852,6 +921,32 @@
 	</div>
 
   </footer>
+
+  <script>
+	function openLightbox(src) {
+	const lightbox = document.getElementById("lightbox");
+	const image = document.getElementById("lightbox-image");
+
+	image.src = src;
+	lightbox.classList.add("active");
+
+	document.body.style.overflow = "hidden";
+	}
+
+	function closeLightbox() {
+	const lightbox = document.getElementById("lightbox");
+
+	lightbox.classList.remove("active");
+
+	document.body.style.overflow = "";
+	}
+
+	document.addEventListener("keydown", function(event) {
+	if (event.key === "Escape") {
+	  closeLightbox();
+	}
+	});
+  </script>
 
 </body>
 
