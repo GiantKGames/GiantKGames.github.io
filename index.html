@@ -159,6 +159,30 @@
       border-color: #ffffff;
       color: #111111;
     }
+	
+	.main-button.disabled {
+	  background: #1c2026;
+	  border-color: #2b3038;
+	  color: #777f89;
+	  cursor: default;
+	  opacity: 0.55;
+	  pointer-events: none;
+	}
+
+	.main-button.disabled .main-button-icon {
+	  filter: brightness(0) invert(1);
+	  opacity: 0.45;
+	}
+
+	.main-button.disabled .button-text small {
+	  color: #626a74;
+	}
+
+	.main-button.disabled:hover {
+	  transform: none;
+	  background: #1c2026;
+	  border-color: #2b3038;
+	}
 
     .main-button-icon {
       width: 27px;
@@ -567,22 +591,24 @@
             </div>
           </a>
 			
-		  <!--
-          <a class="main-button"
-             href="https://drive.google.com/drive/folders/1zSQNx3umNqxjiDA73wBm2z-I6LCBbZEg?usp=drive_link"
-             target="_blank"
-             rel="noopener noreferrer">
+			<!--
+			Press Kit URL:
+			https://drive.google.com/drive/folders/1zSQNx3umNqxjiDA73wBm2z-I6LCBbZEg?usp=drive_link
+			-->
 
-            <img class="main-button-icon"
-                 src="images/icons/presskit.svg"
-                 alt="">
+		<div class="main-button disabled" 
+			aria-disabled="true">
 
-            <div class="button-text">
-              <small>MEDIA</small>
-              <strong>Press Kit</strong>
-            </div>
-          </a>
-		  -->
+		  <img class="main-button-icon"
+				src="images/icons/presskit.svg"
+				alt="">
+
+			<div class="button-text">
+			  <small>COMING SOON</small>
+			  <strong>Press Kit</strong>
+			</div>
+
+		</div>
 
         </div>
       </div>
