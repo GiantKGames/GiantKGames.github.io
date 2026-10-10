@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <title>GiantK Games</title>
-  <meta name="description" content="GiantK Games — Independent game developer. Creator of Nowhere Dawn and SoulUp.">
+
+  <meta name="description"
+        content="GiantK Games — Independent game developer. Creator of Nowhere Dawn and SoulUp.">
 
   <style>
+
+    /* =========================================================
+       BASIC
+    ========================================================= */
+
     * {
       box-sizing: border-box;
     }
@@ -18,9 +28,15 @@
 
     body {
       margin: 0;
+
       background: #0b0d10;
       color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       line-height: 1.6;
     }
 
@@ -29,428 +45,1407 @@
       text-decoration: none;
     }
 
-    /* Navigation */
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
 
     nav {
       position: fixed;
+
       top: 0;
       left: 0;
+
       width: 100%;
-      padding: 22px 6%;
+
+      padding: 19px 6%;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(11, 13, 16, 0.85);
-      backdrop-filter: blur(10px);
-      z-index: 100;
+
+      background: rgba(9, 11, 14, 0.88);
+
+      backdrop-filter: blur(12px);
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.05);
+
+      z-index: 1000;
     }
 
     .logo {
       font-size: 18px;
+
       font-weight: 700;
-      letter-spacing: 1px;
+
+      letter-spacing: 0.6px;
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
-      font-size: 14px;
-      color: #aaaaaa;
+
+      gap: 26px;
+
+      font-size: 13px;
+
+      color: #999999;
+    }
+
+    .nav-links a {
+      transition: color 0.2s;
     }
 
     .nav-links a:hover {
       color: #ffffff;
     }
 
-    /* Hero */
+
+    /* =========================================================
+       HERO
+    ========================================================= */
 
     .hero {
+      position: relative;
+
       min-height: 100vh;
-      padding: 120px 8% 80px;
+
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      align-items: flex-end;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(5, 7, 9, 0.08) 0%,
+          rgba(5, 7, 9, 0.22) 43%,
+          rgba(5, 7, 9, 0.94) 88%,
+          #0b0d10 100%
+        ),
+        url("images/nowhere-dawn/hero.jpg")
+        center center / cover no-repeat;
     }
 
     .hero-content {
-      max-width: 900px;
+      width: 100%;
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      padding:
+        170px
+        7%
+        100px;
     }
 
-    .studio-name {
-      color: #888888;
-      font-size: 14px;
+    .studio-label {
+      margin-bottom: 16px;
+
+      color: #a0a0a0;
+
+      font-size: 12px;
+
       letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 28px;
     }
 
-    h1 {
+    .hero h1 {
       margin: 0;
-      font-size: clamp(54px, 9vw, 110px);
+
+      font-size:
+        clamp(58px, 9vw, 112px);
+
+      line-height: 0.91;
+
       letter-spacing: -4px;
-      line-height: 0.95;
     }
 
     .tagline {
-      margin-top: 28px;
-      font-size: clamp(18px, 2.2vw, 26px);
-      color: #cccccc;
+      margin-top: 26px;
+
+      color: #e0e0e0;
+
+      font-size:
+        clamp(18px, 2vw, 25px);
     }
 
-    .description {
-      max-width: 650px;
-      margin: 22px auto 0;
-      color: #888888;
+    .hero-description {
+      max-width: 670px;
+
+      margin:
+        18px
+        0
+        0;
+
+      color: #aaaaaa;
+
       font-size: 16px;
     }
 
-    .buttons {
-      margin-top: 42px;
+
+    /* =========================================================
+       MAIN CTA BUTTONS
+    ========================================================= */
+
+    .main-buttons {
       display: flex;
-      justify-content: center;
-      gap: 12px;
+
       flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 36px;
     }
 
-    .button {
-      padding: 14px 24px;
-      border: 1px solid #33363d;
+    .main-button {
+      min-width: 160px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      padding:
+        13px
+        19px;
+
+      border:
+        1px solid #353940;
+
       border-radius: 8px;
+
+      background:
+        rgba(13, 16, 20, 0.86);
+
+      transition:
+        transform 0.2s,
+        border-color 0.2s,
+        background 0.2s;
+    }
+
+    .main-button:hover {
+      transform:
+        translateY(-2px);
+
+      border-color:
+        #666a72;
+
+      background:
+        #171a1f;
+    }
+
+    .main-button.primary {
+      background:
+        #ffffff;
+
+      border-color:
+        #ffffff;
+
+      color:
+        #111111;
+    }
+
+    .main-button-icon {
+      width: 27px;
+      height: 27px;
+
+      flex:
+        0 0 27px;
+
+      object-fit:
+        contain;
+    }
+
+    .main-button.primary
+    .main-button-icon {
+      filter:
+        brightness(0);
+    }
+
+    .button-text {
+      text-align: left;
+    }
+
+    .button-text small {
+      display: block;
+
+      margin-bottom: -2px;
+
+      color: #777777;
+
+      font-size: 9px;
+
+      letter-spacing: 1.2px;
+    }
+
+    .button-text strong {
+      display: block;
+
       font-size: 14px;
-      transition: 0.2s;
     }
 
-    .button.primary {
-      background: #ffffff;
-      color: #111111;
-      border-color: #ffffff;
+    .main-button.primary
+    .button-text small {
+      color: #666666;
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-      border-color: #777777;
-    }
 
-    /* Sections */
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================= */
 
     section {
       max-width: 1100px;
+
       margin: 0 auto;
-      padding: 110px 7%;
+
+      padding:
+        105px
+        7%;
     }
 
-    .section-title {
-      margin-bottom: 50px;
-      font-size: 13px;
+    .section-label {
+      margin-bottom: 18px;
+
+      color: #777b82;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
       letter-spacing: 4px;
-      color: #777777;
+
       text-transform: uppercase;
     }
 
-    /* Games */
+    .section-title {
+      margin:
+        0
+        0
+        22px;
 
-    .game {
-      border-top: 1px solid #22252b;
-      padding: 42px 0;
+      font-size:
+        clamp(30px, 4vw, 44px);
+
+      line-height: 1.15;
+    }
+
+    .section-description {
+      max-width: 720px;
+
+      margin: 0;
+
+      color: #999da3;
+
+      font-size: 16px;
+    }
+
+
+    /* =========================================================
+       VIDEO
+    ========================================================= */
+
+    .video-wrapper {
+      position: relative;
+
+      width: 100%;
+
+      padding-top: 56.25%;
+
+      margin-top: 42px;
+
+      overflow: hidden;
+
+      border:
+        1px solid #20242a;
+
+      border-radius: 12px;
+
+      background: #111317;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      border: 0;
+    }
+
+
+    /* =========================================================
+       GALLERY
+    ========================================================= */
+
+    .gallery {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 40px;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 14px;
+
+      margin-top: 38px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+
+      border:
+        1px solid #20242a;
+
+      border-radius: 10px;
+
+      background: #111317;
+    }
+
+    .gallery-item img {
+      width: 100%;
+
+      aspect-ratio: 16 / 9;
+
+      object-fit: cover;
+
+      transition:
+        transform 0.35s;
+    }
+
+    .gallery-item:hover img {
+      transform:
+        scale(1.02);
+    }
+
+
+    /* =========================================================
+       SOULUP
+    ========================================================= */
+
+    .other-game {
+      display: grid;
+
+      grid-template-columns:
+        300px 1fr;
+
+      gap: 34px;
+
       align-items: center;
+
+      padding:
+        26px;
+
+      border:
+        1px solid #252930;
+
+      border-radius: 12px;
+
+      background: #101216;
     }
 
-    .game:last-child {
-      border-bottom: 1px solid #22252b;
+    .other-game-image {
+      overflow: hidden;
+
+      border-radius: 8px;
+
+      background: #181b20;
     }
 
-    .game h2 {
-      margin: 0 0 8px;
+    .other-game-image img {
+      width: 100%;
+
+      aspect-ratio: 16 / 9;
+
+      object-fit: cover;
+    }
+
+    .other-game-content h3 {
+      margin:
+        0
+        0
+        8px;
+
       font-size: 30px;
     }
 
-    .game p {
-      margin: 0;
-      color: #888888;
+    .other-game-content p {
+      margin:
+        0
+        0
+        22px;
+
+      color: #8d9198;
     }
 
-    .game-status {
-      color: #777777;
+    .small-button {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding:
+        11px
+        16px;
+
+      border:
+        1px solid #34383f;
+
+      border-radius: 7px;
+
+      color: #dddddd;
+
       font-size: 13px;
-      white-space: nowrap;
+
+      transition:
+        0.2s;
     }
 
-    /* Links */
+    .small-button:hover {
+      border-color: #666a72;
 
-    .link-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      background: #181b20;
     }
 
-    .link-card {
-      border: 1px solid #24272d;
-      border-radius: 10px;
-      padding: 22px;
-      color: #cccccc;
-      transition: 0.2s;
+    .small-button img {
+      width: 19px;
+      height: 19px;
+
+      object-fit: contain;
     }
 
-    .link-card:hover {
+
+    /* =========================================================
+       SOCIAL ICONS
+    ========================================================= */
+
+    .social-header {
+      max-width: 620px;
+
+      margin-bottom: 28px;
+
+      color: #999da3;
+    }
+
+    .social-icons {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .social-icon-button {
+      position: relative;
+
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid #2a2e35;
+
+      border-radius: 8px;
+
       background: #111419;
-      border-color: #444850;
-      color: #ffffff;
+
+      transition:
+        transform 0.2s,
+        background 0.2s,
+        border-color 0.2s;
     }
 
-    /* Contact */
+    .social-icon-button:hover {
+      transform:
+        translateY(-2px);
+
+      background:
+        #191c21;
+
+      border-color:
+        #60656d;
+    }
+
+    .social-icon-button img {
+      width: 23px;
+      height: 23px;
+
+      object-fit: contain;
+    }
+
+
+    /* TOOLTIP */
+
+    .social-icon-button::after {
+      content:
+        attr(data-name);
+
+      position: absolute;
+
+      bottom: -34px;
+
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+
+      padding:
+        4px
+        8px;
+
+      border-radius: 4px;
+
+      background:
+        #24272d;
+
+      color:
+        #dddddd;
+
+      font-size:
+        10px;
+
+      white-space:
+        nowrap;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition:
+        opacity 0.15s;
+    }
+
+    .social-icon-button:hover::after {
+      opacity: 1;
+    }
+
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
 
     .contact {
       text-align: center;
-      padding-bottom: 140px;
+
+      padding-bottom:
+        125px;
     }
 
     .contact h2 {
-      font-size: 36px;
-      margin-bottom: 12px;
+      margin:
+        0
+        0
+        8px;
+
+      font-size: 38px;
     }
 
     .contact p {
-      color: #888888;
+      margin:
+        0;
+
+      color: #888c92;
     }
 
     .email {
       display: inline-block;
-      margin-top: 22px;
-      font-size: 18px;
-      border-bottom: 1px solid #555555;
+
+      margin-top: 20px;
+
+      padding-bottom: 3px;
+
+      border-bottom:
+        1px solid #555a61;
+
+      color: #eeeeee;
+
+      font-size: 17px;
     }
 
-    /* Footer */
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
 
     footer {
-      border-top: 1px solid #1e2126;
-      padding: 28px 6%;
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding:
+        28px
+        7%;
+
       display: flex;
+
       justify-content: space-between;
-      color: #666666;
-      font-size: 12px;
+
+      border-top:
+        1px solid #202329;
+
+      color:
+        #62666d;
+
+      font-size:
+        11px;
     }
 
-    @media (max-width: 700px) {
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 760px) {
+
       nav {
-        padding: 18px 5%;
+        padding:
+          16px
+          5%;
       }
 
       .nav-links {
-        gap: 14px;
-        font-size: 12px;
+        gap: 13px;
+
+        font-size: 11px;
       }
 
-      h1 {
+      .hero {
+        min-height: 88vh;
+      }
+
+      .hero-content {
+        padding:
+          145px
+          6%
+          65px;
+      }
+
+      .hero h1 {
         letter-spacing: -2px;
       }
 
-      .game {
-        grid-template-columns: 1fr;
-        gap: 12px;
+      .main-buttons {
+        flex-direction: column;
+
+        align-items:
+          flex-start;
       }
 
-      .link-grid {
-        grid-template-columns: 1fr;
+      .main-button {
+        width: 100%;
+
+        max-width: 260px;
+      }
+
+      section {
+        padding:
+          80px
+          6%;
+      }
+
+      .gallery {
+        grid-template-columns:
+          1fr;
+      }
+
+      .other-game {
+        grid-template-columns:
+          1fr;
+      }
+
+      .other-game-image {
+        max-width: 420px;
+      }
+
+      .social-icon-button {
+        width: 45px;
+        height: 45px;
       }
 
       footer {
         flex-direction: column;
-        gap: 8px;
+
+        gap: 5px;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
+
+  <!-- ======================================================
+       NAVIGATION
+  ======================================================= -->
+
   <nav>
-    <div class="logo">GiantK Games</div>
+
+    <a
+      class="logo"
+      href="#top">
+
+      GiantK Games
+
+    </a>
+
 
     <div class="nav-links">
-      <a href="#games">Games</a>
-      <a href="#social">Social</a>
-      <a href="#contact">Contact</a>
+
+      <a href="#game">
+        Game
+      </a>
+
+      <a href="#gallery">
+        Gallery
+      </a>
+
+      <a href="#social">
+        Social
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
     </div>
+
   </nav>
 
 
-  <!-- HERO -->
 
-  <header class="hero">
+  <!-- ======================================================
+       HERO
+  ======================================================= -->
+
+  <header
+    class="hero"
+    id="top">
+
     <div class="hero-content">
 
-      <div class="studio-name">
-        GiantK Games
+
+      <div class="studio-label">
+        GIANTK GAMES
       </div>
 
-      <h1>NOWHERE<br>DAWN</h1>
+
+      <h1>
+        NOWHERE<br>
+        DAWN
+      </h1>
+
 
       <div class="tagline">
-        A foggy city. The infected. A lone survivor.
+
+        A foggy city.
+        The infected.
+        A lone survivor.
+
       </div>
 
-      <p class="description">
-        A post-apocalyptic survival action game about moving through
-        abandoned places, avoiding the infected, and following the traces
-        of those who disappeared.
+
+      <p class="hero-description">
+
+        A post-apocalyptic survival action game.
+
+        Explore abandoned roads, towns and cities
+        shrouded in fog, avoid the infected,
+        and follow the traces of survivors.
+
       </p>
 
-      <div class="buttons">
 
-        <a class="button primary"
-           href="https://store.steampowered.com/app/4881140/Nowhere_Dawn/"
-           target="_blank">
-          Steam
+
+      <!-- MAIN BUTTONS -->
+
+      <div class="main-buttons">
+
+
+        <!-- STEAM -->
+
+        <a
+          class="main-button primary"
+
+          href="https://store.steampowered.com/app/4881140/Nowhere_Dawn/"
+
+          target="_blank"
+
+          rel="noopener noreferrer">
+
+
+          <img
+            class="main-button-icon"
+
+            src="images/icons/steam.svg"
+
+            alt="">
+
+
+          <div class="button-text">
+
+            <small>
+              VIEW ON
+            </small>
+
+            <strong>
+              Steam
+            </strong>
+
+          </div>
+
         </a>
 
-        <a class="button"
-           href="https://youtu.be/uNPQ-Ch0uZE"
-           target="_blank">
-          Trailer
+
+
+        <!-- TRAILER -->
+
+        <a
+          class="main-button"
+
+          href="https://youtu.be/uNPQ-Ch0uZE"
+
+          target="_blank"
+
+          rel="noopener noreferrer">
+
+
+          <img
+            class="main-button-icon"
+
+            src="images/icons/play.svg"
+
+            alt="">
+
+
+          <div class="button-text">
+
+            <small>
+              WATCH
+            </small>
+
+            <strong>
+              Trailer
+            </strong>
+
+          </div>
+
         </a>
 
-        <a class="button"
-           href="https://drive.google.com/drive/folders/1zSQNx3umNqxjiDA73wBm2z-I6LCBbZEg"
-           target="_blank">
-          Press Kit
+
+
+        <!-- PRESS KIT -->
+
+        <a
+          class="main-button"
+
+          href="https://drive.google.com/drive/folders/1zSQNx3umNqxjiDA73wBm2z-I6LCBbZEg?usp=drive_link"
+
+          target="_blank"
+
+          rel="noopener noreferrer">
+
+
+          <img
+            class="main-button-icon"
+
+            src="images/icons/presskit.svg"
+
+            alt="">
+
+
+          <div class="button-text">
+
+            <small>
+              MEDIA
+            </small>
+
+            <strong>
+              Press Kit
+            </strong>
+
+          </div>
+
         </a>
+
 
       </div>
 
     </div>
+
   </header>
 
 
-  <!-- GAMES -->
 
-  <section id="games">
+  <!-- ======================================================
+       GAME / VIDEO
+  ======================================================= -->
 
-    <div class="section-title">Games</div>
-
-    <a href="https://store.steampowered.com/app/4881140/Nowhere_Dawn/"
-       target="_blank"
-       class="game">
-
-      <div>
-        <h2>Nowhere Dawn</h2>
-        <p>
-          Post-apocalyptic survival action.
-          Explore abandoned roads, towns and cities shrouded in fog.
-        </p>
-      </div>
-
-      <div class="game-status">
-        In Development →
-      </div>
-
-    </a>
+  <section id="game">
 
 
-    <a href="https://store.steampowered.com/app/4131470/SoulUp/"
-       target="_blank"
-       class="game">
-
-      <div>
-        <h2>SoulUp</h2>
-        <p>
-          A vertical action game combining tower climbing with boss battles.
-        </p>
-      </div>
-
-      <div class="game-status">
-        Available on Steam →
-      </div>
-
-    </a>
-
-  </section>
+    <div class="section-label">
+      About the Game
+    </div>
 
 
-  <!-- SOCIAL -->
+    <h2 class="section-title">
+      Survive the fog.
+    </h2>
 
-  <section id="social">
 
-    <div class="section-title">Social</div>
+    <p class="section-description">
 
-    <div class="link-grid">
+      The world has fallen silent.
 
-      <a class="link-card"
-         href="https://x.com/GiantKGames"
-         target="_blank">
-        X / Twitter ↗
-      </a>
+      Move through abandoned roads,
+      towns and cities where the infected
+      still wander.
 
-      <a class="link-card"
-         href="https://www.youtube.com/@giantk_games"
-         target="_blank">
-        YouTube ↗
-      </a>
+      Search for resources,
+      avoid unnecessary encounters,
+      and follow the traces left behind
+      by other survivors.
 
-      <a class="link-card"
-         href="https://www.instagram.com/giantkgames/"
-         target="_blank">
-        Instagram ↗
-      </a>
+    </p>
 
-      <a class="link-card"
-         href="https://bsky.app/profile/giantkgames.bsky.social"
-         target="_blank">
-        Bluesky ↗
-      </a>
 
-      <a class="link-card"
-         href="https://giantkgames.itch.io"
-         target="_blank">
-        itch.io ↗
-      </a>
+    <div class="video-wrapper">
 
-      <a class="link-card"
-         href="https://store.steampowered.com/developer/giantkgames"
-         target="_blank">
-        Steam Developer Page ↗
-      </a>
+      <iframe
+
+        src="https://www.youtube.com/embed/uNPQ-Ch0uZE"
+
+        title="Nowhere Dawn Trailer"
+
+        loading="lazy"
+
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share
+        "
+
+        allowfullscreen>
+
+      </iframe>
 
     </div>
 
   </section>
 
 
-  <!-- CONTACT -->
 
-  <section id="contact" class="contact">
+  <!-- ======================================================
+       SCREENSHOTS
+  ======================================================= -->
 
-    <div class="section-title">Contact</div>
+  <section id="gallery">
 
-    <h2>GiantK Games</h2>
+
+    <div class="section-label">
+      Screenshots
+    </div>
+
+
+    <h2 class="section-title">
+      Lost in the fog.
+    </h2>
+
+
+    <div class="gallery">
+
+
+      <div class="gallery-item">
+
+        <img
+          src="images/nowhere-dawn/screenshot-01.jpg"
+
+          alt="Nowhere Dawn gameplay screenshot">
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="images/nowhere-dawn/screenshot-02.jpg"
+
+          alt="Nowhere Dawn gameplay screenshot">
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="images/nowhere-dawn/screenshot-03.jpg"
+
+          alt="Nowhere Dawn gameplay screenshot">
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="images/nowhere-dawn/screenshot-04.jpg"
+
+          alt="Nowhere Dawn gameplay screenshot">
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       SOULUP
+  ======================================================= -->
+
+  <section>
+
+
+    <div class="section-label">
+      Other Game
+    </div>
+
+
+    <div class="other-game">
+
+
+      <div class="other-game-image">
+
+        <img
+          src="images/soulup/cover.jpg"
+
+          alt="SoulUp">
+
+      </div>
+
+
+      <div class="other-game-content">
+
+
+        <h3>
+          SoulUp
+        </h3>
+
+
+        <p>
+
+          A vertical action game
+          combining tower climbing
+          with boss battles.
+
+          Available on Steam.
+
+        </p>
+
+
+        <a
+          class="small-button"
+
+          href="https://store.steampowered.com/app/4131470/SoulUp/"
+
+          target="_blank"
+
+          rel="noopener noreferrer">
+
+
+          <img
+            src="images/icons/steam.svg"
+
+            alt="">
+
+
+          View on Steam
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       SOCIAL
+  ======================================================= -->
+
+  <section id="social">
+
+
+    <div class="section-label">
+      Follow GiantK Games
+    </div>
+
+
+    <p class="social-header">
+
+      Follow development updates,
+      screenshots and videos from GiantK Games.
+
+    </p>
+
+
+
+    <div class="social-icons">
+
+
+      <!-- X -->
+
+      <a
+        class="social-icon-button"
+
+        href="https://x.com/GiantKGames"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+
+        data-name="X"
+
+        aria-label="GiantK Games on X">
+
+        <img
+          src="images/icons/x.svg"
+
+          alt="X">
+
+      </a>
+
+
+
+      <!-- YOUTUBE -->
+
+      <a
+        class="social-icon-button"
+
+        href="https://www.youtube.com/@giantk_games"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+
+        data-name="YouTube"
+
+        aria-label="GiantK Games on YouTube">
+
+        <img
+          src="images/icons/youtube.svg"
+
+          alt="YouTube">
+
+      </a>
+
+
+
+      <!-- INSTAGRAM -->
+
+      <a
+        class="social-icon-button"
+
+        href="https://www.instagram.com/giantkgames/"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+
+        data-name="Instagram"
+
+        aria-label="GiantK Games on Instagram">
+
+        <img
+          src="images/icons/instagram.svg"
+
+          alt="Instagram">
+
+      </a>
+
+
+
+      <!-- THREADS -->
+
+      <a
+        class="social-icon-button"
+
+        href="https://www.threads.com/@giantkgames"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+
+        data-name="Threads"
+
+        aria-label="GiantK Games on Threads">
+
+        <img
+          src="images/icons/threads.svg"
+
+          alt="Threads">
+
+      </a>
+
+
+
+      <!-- FACEBOOK -->
+
+      <a
+        class="social-icon-button"
+
+        href="https://www.facebook.com/GiantKGames/"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+
+        data-name="Facebook"
+
+        aria-label="GiantK Games on Facebook">
+
+        <img
+          src="images/icons/facebook.svg"
+
+          alt="Facebook">
+
+      </a>
+
+
+
+      <!-- BLUESKY -->
+
+      <a
+        class="social-icon-button"
+
+        href="https://bsky.app/profile/giantkgames.bsky.social"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+
+        data-name="Bluesky"
+
+        aria-label="GiantK Games on Bluesky">
+
+        <img
+          src="images/icons/bluesky.svg"
+
+          alt="Bluesky">
+
+      </a>
+
+
+
+      <!-- BILIBILI -->
+
+      <a
+        class="social-icon-button"
+
+        href="https://space.bilibili.com/3707037328345440"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+
+        data-name="Bilibili"
+
+        aria-label="GiantK Games on Bilibili">
+
+        <img
+          src="images/icons/bilibili.svg"
+
+          alt="Bilibili">
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       CONTACT
+  ======================================================= -->
+
+  <section
+    id="contact"
+    class="contact">
+
+
+    <div class="section-label">
+      Contact
+    </div>
+
+
+    <h2>
+      GiantK Games
+    </h2>
+
 
     <p>
       Independent game developer.
     </p>
 
-    <a class="email"
-       href="mailto:giantk@giant-k.co.kr">
+
+    <a
+      class="email"
+
+      href="mailto:giantk@giant-k.co.kr">
+
       giantk@giant-k.co.kr
+
     </a>
+
 
   </section>
 
 
+
+  <!-- ======================================================
+       FOOTER
+  ======================================================= -->
+
   <footer>
+
 
     <div>
       © 2026 GiantK Games
     </div>
 
+
     <div>
-      Seoul, Republic of Korea
+      NOWHERE DAWN
     </div>
+
 
   </footer>
 
+
 </body>
+
 </html>
